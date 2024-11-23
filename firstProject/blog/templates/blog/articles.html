@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+{% block title %}Article - {{ article.title }}{% endblock %}
+{% block body %}
+<div class="container">
+
+    <div class="article-detail">
+        <h1>{{ title }}</h1>
+        <h1>ccc</h1>
+        <p class="article-date">{{ article.created_at }}</p>
+        <div class="article-content">
+            <p>{{ article.content }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

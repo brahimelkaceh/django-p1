@@ -1,0 +1,38 @@
+{% extends 'base/base.html'%}
+{% block title %}
+index
+{% endblock %}
+{% block style %}
+style
+{% endblock %}
+{% block body %}
+<div class="my-title">
+    <h1>Blog Page</h1>
+
+</div>
+<div class="container">
+    <header class="header">
+        <h1>Articles</h1>
+    </header>
+    {% for article in articles %}
+
+    <div class="article">
+        <h2 class="article-title">
+            {{article.title}}</h2>
+        <p class="article-content">
+            {{article.content}}
+        </p>
+        <p class="article-date">
+            Published on: {{ article.created_at }}
+        </p>
+
+        <a href="{% url 'articles' article.id %}">
+            <p>
+                read more ➡️
+            </p>
+        </a>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock %}
